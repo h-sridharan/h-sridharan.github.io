@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Portfolio from "../components/Portfolio";
+import { getCollection } from "astro:content";
+const works = await getCollection("works");
+const filters = await getCollection("portfolioFilters");
+---
+
+<Layout
+  title="Portfolio - Haripriya Sridharan Pure Mathematics Complex Analysis Complex Geometry Research K-theory Oka Principle"
+>
+  <Portfolio portfolio={works} filters={filters} client:only />
+</Layout>
